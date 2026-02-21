@@ -1,0 +1,1 @@
+//a Makefile with standard targets (build, run, test) will allow anyone, regardless of familiarity with the commands specific to your language, to run the project.
