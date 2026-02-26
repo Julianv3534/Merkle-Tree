@@ -1,17 +1,17 @@
-//! # Merkle Tree Library
-//!
-//! This crate provides a Merkle tree implementation for learning purposes.
-//!
-//! ## Modules TODO
-//! - `tree`: Core Merkle tree structure and building
-//! - `proof`: Proof generation and verification (coming soon)
-//! - `hash`: Hashing utilities
+//Merkle Tree Library
 
-pub mod tree;
-pub mod proof;
+//This crate provides a Merkle tree implementation for learning purposes.
+
+// Modules
+//'tree': Core Merkle tree structure and building
+//'proof': Proof generation and verification
+//'hash': Hashing utilities
+
 pub mod hash;
+pub mod proof;
+pub mod tree;
 
 // Re-export commonly used types at crate root for convenience
 pub use hash::Hash;
+pub use proof::{MerkleProof, ProofStep};
 pub use tree::MerkleTree;
-// pub use proof::TODO;
