@@ -1,1 +1,4 @@
 /target
+
+#Since this project is for library purposes, I am not going to include the Cargo.lock file.
+Cargo.lock

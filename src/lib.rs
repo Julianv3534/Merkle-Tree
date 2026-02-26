@@ -1,14 +1,17 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//Merkle Tree Library
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+//This crate provides a Merkle tree implementation for learning purposes.
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+// Modules
+//'tree': Core Merkle tree structure and building
+//'proof': Proof generation and verification
+//'hash': Hashing utilities
+
+pub mod hash;
+pub mod proof;
+pub mod tree;
+
+// Re-export commonly used types at crate root for convenience
+pub use hash::Hash;
+pub use proof::{MerkleProof, ProofStep};
+pub use tree::MerkleTree;
