@@ -20,6 +20,8 @@ impl MerkleTree {
         }
     }
 
+    //Builds a Merkle tree from a slice of data items. Each item is hashed to create the leaf nodes, and then internal nodes are built up to the root.
+    //I used AsRef<[u8]> instead of just &[u8] to allow more flexible input types (like &str, Vec<u8>, etc.) without forcing the caller to convert to bytes first.
     pub fn from_data<T: AsRef<[u8]>>(data: &[T]) -> Self {
         if data.is_empty() {
             return MerkleTree::new();
@@ -73,7 +75,7 @@ impl MerkleTree {
 
     /// Returns the root hash of the tree, or `None` if the tree is empty
     pub fn root_hash(&self) -> Option<Hash> {
-        self.nodes.first().copied()
+        self.nodes.get(0).copied()
     }
 
     pub fn is_empty(&self) -> bool {
